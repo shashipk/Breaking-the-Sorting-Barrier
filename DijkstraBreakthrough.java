@@ -874,7 +874,7 @@ public class DijkstraBreakthrough {
         System.out.println("\n" + "=".repeat(60));
         System.out.println("THEORETICAL COMPLEXITY ANALYSIS");
         System.out.println("=".repeat(60));
-        System.out.printf("Graph characteristics: n=%,d vertices, m=%,d edges%n", numVertices, numEdges);
+        System.out.printf("Graph characteristics: n=%d vertices, m=%d edges%n", numVertices, numEdges);
         
         // Calculate graph density
         double maxPossibleEdges = (double) numVertices * (numVertices - 1);
@@ -908,9 +908,9 @@ public class DijkstraBreakthrough {
         // Bellman-Ford: O(mn)
         double bellmanFordOperations = (double) numEdges * numVertices;
         
-        System.out.printf("Dijkstra (traditional):  %15,.0f operations%n", dijkstraOperations);
-        System.out.printf("Breakthrough algorithm:  %15,.0f operations%n", breakthroughOperations);
-        System.out.printf("Bellman-Ford:            %15,.0f operations%n", bellmanFordOperations);
+        System.out.printf("Dijkstra (traditional):  %15.0f operations%n", dijkstraOperations);
+        System.out.printf("Breakthrough algorithm:  %15.0f operations%n", breakthroughOperations);
+        System.out.printf("Bellman-Ford:            %15.0f operations%n", bellmanFordOperations);
         
         // Calculate theoretical speedups
         double breakthroughSpeedup = dijkstraOperations / breakthroughOperations;
@@ -961,7 +961,7 @@ public class DijkstraBreakthrough {
             double breakOps = projectedEdges * Math.pow(Math.log(n) / Math.log(2), 2.0/3.0);
             double speedup = dijkOps / breakOps;
             
-            System.out.printf("n=%,8d    %,10.0f     %,10.0f      %.2fx%n", 
+            System.out.printf("n=%d    %10.0f     %10.0f      %.2fx%n", 
                             n, dijkOps, breakOps, speedup);
         }
         
